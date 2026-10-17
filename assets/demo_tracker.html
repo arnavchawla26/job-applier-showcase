@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Job Applier - Tracker (demo data)</title>
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--surface-2:#f1f5f9;--border:#e2e8f0;--ink:#0f172a;--ink-2:#475569;--muted:#64748b;
+--accent:#2563eb;--accent-hover:#1d4ed8;--accent-soft:#dbeafe;--gain:#047857;--gain-soft:#d1fae5;--loss:#be123c;--loss-soft:#ffe4e6;
+--warn:#b45309;--warn-soft:#fef3c7;--radius:10px;--radius-xl:16px;--shadow:0 1px 3px rgba(15,23,42,.04),0 4px 20px rgba(15,23,42,.07)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:rgba(255,255,255,.85);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:20px;padding:0 24px;height:56px}
+header b{font-size:15px;letter-spacing:-.01em}
+nav{display:flex;gap:2px;flex:1}
+nav button{background:none;border:0;padding:8px 12px;border-radius:8px;color:var(--ink-2);font:inherit;font-weight:500}
+nav button.on{background:var(--accent-soft);color:var(--accent-hover)}
+main{max-width:1180px;margin:0 auto;padding:28px 24px 40px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px}h2{font-size:15px;margin:0 0 12px}
+p.sub{color:var(--muted);margin:0 0 22px}
+.card{background:var(--surface);border:1px solid rgba(15,23,42,.05);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:20px;margin-bottom:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px}
+.stat{background:var(--surface);border-radius:var(--radius-xl);box-shadow:var(--shadow);padding:14px 16px;border:2px solid transparent}
+.stat.on{border-color:var(--accent)}.stat b{display:block;font-size:24px;letter-spacing:-.02em}.stat span{color:var(--muted);font-size:12px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding:8px 10px;background:var(--bg);border-bottom:1px solid var(--border)}
+td{padding:9px 10px;border-bottom:1px solid var(--surface-2);vertical-align:top}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:600;background:var(--surface-2);color:var(--ink-2)}
+.pill.submitted{background:var(--gain-soft);color:var(--gain)}.pill.needs_you{background:var(--warn-soft);color:var(--warn)}.pill.refused{background:var(--loss-soft);color:var(--loss)}
+.muted{color:var(--muted)}.small{font-size:12px}a{color:var(--accent);text-decoration:none}
+.btn{background:#fff;color:var(--ink);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font:inherit;font-weight:600}
+.note{background:var(--warn-soft);color:var(--warn);border-radius:var(--radius);padding:8px 14px;margin-bottom:16px;font-weight:500}
+</style></head><body>
+<header><b>Job Applier</b><nav><button>Session</button><button class="on">Tracker</button><button>Needs you</button><button>Approve answers</button><button>Results</button></nav><span class="muted small">v1.12</span></header>
+<main>
+<h1>Tracker</h1>
+<p class="sub">638 applications on record, 6-12 Oct 2026. Stats and the board table are the real counts from the owner's tracker; the rows below are demo rows with made-up companies.</p>
+<div class="stats">
+<div class="stat on"><b>186</b><span>Submitted</span></div><div class="stat"><b>0</b><span>Interviewing</span></div><div class="stat"><b>0</b><span>Offer</span></div><div class="stat"><b>0</b><span>Rejected</span></div>
+<div class="stat"><b>275</b><span>Needs you</span></div><div class="stat"><b>14</b><span>Needs login</span></div><div class="stat"><b>70</b><span>Refused or unconfirmed</span></div><div class="stat"><b>81</b><span>Not finished</span></div><div class="stat"><b>12</b><span>Skipped</span></div>
+</div>
+<div class="card"><h2>By job board</h2><table><tr><th>Board</th><th>Submitted</th><th>Needs you</th><th>Needs login</th><th>Refused or unconfirmed</th><th>Not finished</th><th>Submitted of attempted</th></tr>
+<tr><td><b>workday</b></td><td>50</td><td>84</td><td>13</td><td>1</td><td>21</td><td>30%</td></tr>
+<tr><td><b>greenhouse</b></td><td>58</td><td>51</td><td>0</td><td>25</td><td>33</td><td>35%</td></tr>
+<tr><td><b>other</b></td><td>41</td><td>92</td><td>0</td><td>7</td><td>10</td><td>27%</td></tr>
+<tr><td><b>ashby</b></td><td>37</td><td>20</td><td>0</td><td>9</td><td>13</td><td>47%</td></tr>
+<tr><td><b>lever</b></td><td>0</td><td>4</td><td>0</td><td>28</td><td>4</td><td>0%</td></tr>
+<tr><td><b>oracle</b></td><td>0</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0%</td></tr>
+<tr><td><b>icims</b></td><td>0</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0%</td></tr>
+</table></div>
+<div class="card"><h2>Recent (demo rows)</h2>
+<table><tr><th>Company</th><th>Role</th><th>Board</th><th>Updated</th><th>Detail</th><th></th></tr>
+<tr><td><b>Northwind Analytics</b></td><td><a>Data Science Intern - Summer 2027</a></td><td>greenhouse</td><td class="small muted">10-07 09:14</td><td class="small">confirmation page seen</td><td><button class="btn">Files</button></td></tr>
+<tr><td><b>Fabrikam Robotics</b></td><td><a>Software Engineer Intern</a></td><td>workday</td><td class="small muted">10-07 09:31</td><td class="small">confirmation email received: Thank you for applying</td><td><button class="btn">Files</button></td></tr>
+<tr><td><b>Contoso Health</b></td><td><a>Data Analyst Intern</a></td><td>other</td><td class="small muted">10-10 14:02</td><td class="small">confirmation page seen</td><td><button class="btn">Files</button></td></tr>
+<tr><td><b>Tailspin Logistics</b></td><td><a>Machine Learning Intern</a></td><td>ashby</td><td class="small muted">10-10 14:20</td><td class="small">confirmation page seen</td><td><button class="btn">Files</button></td></tr>
+<tr><td><b>Lucerne Capital Group</b></td><td><a>Quantitative Research Intern</a></td><td>greenhouse</td><td class="small muted">10-11 11:48</td><td class="small">confirmation page seen</td><td><button class="btn">Files</button></td></tr>
+<tr><td><b>Wide World Importers</b></td><td><a>Operations Analytics Intern</a></td><td>lever</td><td class="small muted">10-11 12:05</td><td class="small"><span class="pill refused">refused</span> submit was pressed but the site silently held it back (bot check); finish it by hand</td><td><button class="btn">Finish by hand</button></td></tr>
+<tr><td><b>Adatum Energy</b></td><td><a>Data Engineering Intern</a></td><td>workday</td><td class="small muted">10-11 12:33</td><td class="small"><span class="pill needs_you">needs you</span> Claude could not answer these truthfully; they need you: "Which of our offices would you consider?"</td><td><button class="btn">Finish by hand</button></td></tr>
+</table></div>
+</main></body></html>
