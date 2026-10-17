@@ -9,7 +9,7 @@ the cloud version: sign-up, profile, runs and the "ready for you" list.
 flowchart TB
     subgraph discover["1. Find roles"]
         jobs["jobs.py<br/>Greenhouse / Lever / Ashby board feeds<br/>+ postings from URLs"]
-        boards["boards.py<br/>auto / hand / never per hiring system<br/>(from docs/LEGAL-job-boards.md)"]
+        boards["boards.py<br/>auto / hand / never per hiring system<br/>(from docs/platform-policy.md)"]
         tracker["tracker.py<br/>SQLite (Mac) or Postgres (cloud)<br/>never apply twice"]
     end
     subgraph tailor["2. Tailor"]

@@ -19,7 +19,7 @@ Oct 2026; the rows are demo rows with made-up companies, rendered from `assets/d
 ## How it decides
 
 The policy lives in one module, `applier/boards.py`, and comes from reading each platform's own published terms
-(the research is in [docs/LEGAL-job-boards.md](docs/LEGAL-job-boards.md), quotes and sources included). Three
+(the research is in [docs/platform-policy.md](docs/platform-policy.md), quotes and sources included). Three
 modes:
 
 | Mode | Hiring systems | Why | What the app does |
@@ -162,7 +162,7 @@ if forbids := boards.terms_forbid_automation("\n".join(self.terms_seen) + "\n" +
 
 ```
 README.md                  this page
-docs/LEGAL-job-boards.md   the per-platform research behind the policy, with sources
+docs/platform-policy.md   the per-platform research behind the policy, with sources
 docs/architecture.md       full component diagram and the decision path for one application
 scripts/numbers.py         the exact query behind the Numbers section (takes the tracker CSV as an argument)
 scripts/screenshot.py      renders the demo tracker page to assets/tracker.png with headless Chromium
