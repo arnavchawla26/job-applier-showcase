@@ -5,14 +5,14 @@ application in a real Chrome window, verifies what it filled, and either submits
 the person. It calls a model only when a rule or a saved answer cannot settle a question, and it reads each
 site's terms first: where automation is not allowed, the person presses Submit. This repository is the public
 face of a private codebase: the policy, the architecture, the numbers from one week of real use, and one code
-excerpt; the source stays private because it ships with the owner's profile, answers and tracker.
+excerpt; the source stays private because it ships with my profile, answers and tracker.
 
 Stack: Python 3.13, Playwright, Claude API, Next.js, Postgres (SQLite in the Mac app, Neon Postgres in the cloud
 version), FastAPI for the local app, tectonic for LaTeX.
 
 ![Tracker page with demo rows](assets/tracker.png)
 
-*The Tracker page. The stat tiles and the by-board table are the real counts from the owner's tracker for 6-12
+*The Tracker page. The stat tiles and the by-board table are the real counts from my tracker for 6-12
 Oct 2026; the rows are demo rows with made-up companies, rendered from `assets/demo_tracker.html` by
 `scripts/screenshot.py`.*
 
@@ -54,7 +54,7 @@ flowchart LR
 
 ## Numbers
 
-One week of the owner's own job search, with the per-site rules above applied: every posting got its own
+One week of my own job search, with the per-site rules above applied: every posting got its own
 tailored resume (628 of 638), every Submit was pressed at most once, and where a site forbade or blocked
 automation the app stopped and handed the job to the person. The figures that describe how it behaved:
 
@@ -65,10 +65,10 @@ automation the app stopped and handed the job to the person. The figures that de
   a rejected required field, a login wall, an emailed code).
 - **One tailored resume per posting: 628 of 638.**
 
-The source is the owner's tracker (`applier_tracker.csv`, the spreadsheet copy the app rewrites on every
+The source is my tracker (`applier_tracker.csv`, the spreadsheet copy the app rewrites on every
 change), window **2026-10-06 to 2026-10-12** (every row the tracker holds falls in it). The query is
-[`scripts/numbers.py`](scripts/numbers.py); the CSV itself is not published because it names the companies the
-owner applied to. Output, unedited:
+[`scripts/numbers.py`](scripts/numbers.py); the CSV itself is not published because it names the companies I
+applied to. Output, unedited:
 
 ```
 rows                         638
