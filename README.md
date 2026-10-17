@@ -24,8 +24,8 @@ modes:
 
 | Mode | Hiring systems | Why | What the app does |
 |---|---|---|---|
-| **auto** | Greenhouse, Workday, SmartRecruiters, Workable (Oracle, Taleo, SuccessFactors are listed as auto in the code but not supported by the engine yet) | The vendor's terms do not address candidate-side automation on the employer's apply page, and no bot check stands at the Submit button | Fill, read back, verify, press Submit once. A visible CAPTCHA, a bot wall or a silent hold-back sets the job aside as `blocked_by_site`; it is never retried with tricks |
-| **hand** | Lever, Ashby, iCIMS | A CAPTCHA at every submit (Lever hCaptcha, Ashby reCAPTCHA Enterprise) is the site saying no; iCIMS tells employers that candidate-side headless automation breaches their contract | Fill and verify everything, then the person presses Submit in that window (`_hand_over()`); in the cloud only a Workday draft can be handed over, anything else is set aside for the person's own machine |
+| **auto** | Greenhouse, Workday, SmartRecruiters, Workable | The vendor's terms do not address candidate-side automation on the employer's apply page, and no bot check stands at the Submit button | Fill, read back, verify, press Submit once. A visible CAPTCHA, a bot wall or a silent hold-back sets the job aside as `blocked_by_site`; it is never retried with tricks |
+| **hand** | Lever, Ashby, iCIMS, Oracle Recruiting/Taleo, SAP SuccessFactors | A CAPTCHA at every submit (Lever hCaptcha, Ashby reCAPTCHA Enterprise) is the site saying no; iCIMS tells employers that candidate-side headless automation breaches their contract; Oracle and SAP forms are not supported by the fill engine, so they are never submitted by the app | Fill and verify everything, then the person presses Submit in that window (`_hand_over()`); in the cloud only a Workday draft can be handed over, anything else is set aside for the person's own machine |
 | **never** | LinkedIn, Indeed, Glassdoor, ZipRecruiter, Dice | The board's own user agreement forbids bots, plugins or applying by automated means | Not applied to, not read, not used for discovery |
 
 **The hand-off rule, plainly:** where a site forbids automation, the app does not submit. It fills the form,
@@ -54,8 +54,19 @@ flowchart LR
 
 ## Numbers
 
-From the owner's own tracker (`applier_tracker.csv`, the spreadsheet copy the app rewrites on every change),
-window **2026-10-06 to 2026-10-12** (every row the tracker holds falls in it). The query is
+One week of the owner's own job search, with the per-site rules above applied: every posting got its own
+tailored resume (628 of 638), every Submit was pressed at most once, and where a site forbade or blocked
+automation the app stopped and handed the job to the person. The figures that describe how it behaved:
+
+- **Confirmed per Submit pressed: 186 of 256 (73%).** The rest were interrupted runs, unconfirmed pages, or
+  bot checks the app honoured and never retried.
+- **Blocked by the site, never retried: 39.** A bot wall, hCaptcha or silent hold-back ends the attempt.
+- **Handed to the person: 275** rows the app would not finish on its own (a question with no true source,
+  a rejected required field, a login wall, an emailed code).
+- **One tailored resume per posting: 628 of 638.**
+
+The source is the owner's tracker (`applier_tracker.csv`, the spreadsheet copy the app rewrites on every
+change), window **2026-10-06 to 2026-10-12** (every row the tracker holds falls in it). The query is
 [`scripts/numbers.py`](scripts/numbers.py); the CSV itself is not published because it names the companies the
 owner applied to. Output, unedited:
 
